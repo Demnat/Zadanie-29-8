@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/nodeappdatabase', {
+mongoose.connect('mongodb://<task29>:<nji90okm>@ds111478.mlab.com:11478/kodillatask', {
     useMongoClient: true
 });
 
@@ -137,7 +137,7 @@ const findKennyAndDelete = function() {
 
 const findBennyAndRemove = function() {
     // find specific user and delete
-    return User.findOneAndRemove({ username: 'Benny_the_man' })
+    return User.findOneAndRemove({ username: 'Benny_the_boy' })
         .then(function(user) {
             return user.remove(function() {
                 console.log('User successfully deleted');
