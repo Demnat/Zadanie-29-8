@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://<task29>:<nji90okm>@ds111478.mlab.com:11478/kodillatask', {
-    useMongoClient: true
+mongoose.connect('mongodb://task29:nji90okm@ds111478.mlab.com:11478/kodillatask', {
+    useNewUrlParser: true,
+    useCreateIndex: true
 });
 
 //new user Schema
@@ -38,7 +39,7 @@ userSchema.pre('save', function(next) {
 });
 
 //model based on userSchema
-const User = mongoose.model('User26', userSchema);
+const User = mongoose.model('User', userSchema);
 
 //instancje klasy User
 const kenny = new User({
@@ -137,7 +138,7 @@ const findKennyAndDelete = function() {
 
 const findBennyAndRemove = function() {
     // find specific user and delete
-    return User.findOneAndRemove({ username: 'Benny_the_boy' })
+    return User.findOneAndRemove({ username: 'Benny_the_man' })
         .then(function(user) {
             return user.remove(function() {
                 console.log('User successfully deleted');
